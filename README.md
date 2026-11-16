@@ -1,5 +1,8 @@
 # West Coast KBP public site
 
+Deploys: every push to main goes live on westcoastkbp.com through Vercel Git integration;
+pull requests get a preview link. Merge to main only with Tony's yes.
+
 This directory preserves the seven files of the live static Vercel deployment
 `dpl_8QBfmYbKyJwecXqB48emHvDuP8FL` and adds the requested English privacy policy.
 The existing deployment points to an archived repository; this copy keeps its
