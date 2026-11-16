@@ -61,6 +61,12 @@ a:hover .roll>i,a:focus-visible .roll>i{transform:translateY(-100%)}
 .ftr{display:grid;grid-template-columns:171px 174px 1fr auto;padding:80px 0 50px;align-items:start}
 .ftr .logo svg{height:24px;width:46px}
 
+
+/* the template's entrance: big words rise into place, one line after another */
+.rise span{animation:rise 1.1s cubic-bezier(.6,0,.2,1) both}
+.rise span:nth-child(2){animation-delay:.08s}.rise span:nth-child(3){animation-delay:.16s}
+@keyframes rise{from{transform:translateY(55%);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(0 0 -10% 0)}}
+.row+.gap{border-top:1px solid #fff}
 @media (max-width:760px){
   :root{--pad:20px;--inset:6px;--r:22px;--big:min(240px,19vw)}
   .hdr{grid-template-columns:1fr auto;row-gap:16px}
@@ -69,7 +75,7 @@ a:hover .roll>i,a:focus-visible .roll>i{transform:translateY(-100%)}
   .ftr{grid-template-columns:1fr 1fr;row-gap:24px}
   .para{max-width:320px}
 }
-@media (prefers-reduced-motion:reduce){.roll>i{transition:none}.row .big{transform:translate3d(0,-50%,0)!important;left:var(--pad)}}
+@media (prefers-reduced-motion:reduce){.rise span{animation:none}.roll>i{transition:none}.row .big{transform:translate3d(0,-50%,0)!important;left:var(--pad)}}
 </style>
 </head>
 <body>
@@ -91,7 +97,7 @@ a:hover .roll>i,a:focus-visible .roll>i{transform:translateY(-100%)}
     </header>
     <div class="rule"></div>
     <div class="mid">
-      <h1 class="big"><span>Built</span><span>to be</span><span>checked</span></h1>
+      <h1 class="big rise"><span>Built</span><span>to be</span><span>checked</span></h1>
     </div>
     <div class="rule"></div>
     <a class="label s" href="#t2"><span class="roll" style="height:1.16em"><i>General construction</i><i>Northern California</i></span></a>
