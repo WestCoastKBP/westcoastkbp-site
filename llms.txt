@@ -1,0 +1,20 @@
+# KBP AI
+
+KBP AI is a personal AI assistant in development by West Coast KBP, designed to connect your context, tools and tasks, with decisions in your hands.
+
+Slogan: Remember what matters. Follow through.
+Status: Prototype in development.
+Canonical website: https://www.westcoastkbp.com/
+Organization: https://github.com/WestCoastKBP
+
+## Product direction
+
+The intended assistant remembers confirmed context, helps follow through on tasks, and keeps decisions with the person using it. This is product direction, not a claim of delivered functionality.
+
+## Current status
+
+Development and testing are private. There is no public installer or public product demo yet. The blocked-task explanation scenario has not been released.
+
+The paper-mail sequence shown on the website is an illustrative proposed workflow: photograph a letter, explain it, confirm facts, save the matter, and retrieve it in a later conversation. It is not a released feature or an offer to make payments, send messages or delete records.
+
+No partnership, vendor endorsement, security certification, customer adoption or general availability is claimed.
