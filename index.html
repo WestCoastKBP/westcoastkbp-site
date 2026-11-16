@@ -44,22 +44,22 @@ a:hover .roll>i,a:focus-visible .roll>i{transform:translateY(-100%)}
 /* header (tile 1) */
 .hdr{display:grid;grid-template-columns:171px 1fr auto;align-items:start;padding:41px 0 24px;flex:none}
 .logo{display:flex;align-items:center;gap:12px}
-.logo svg{height:28px;width:auto;display:block}
+.logo svg{height:28px;width:54px;display:block;overflow:visible}
 .nav{display:flex;flex-direction:column}
 .pill{border:1px solid currentColor;border-radius:999px;padding:1px 12px 0;line-height:14px}
 .hero .mid{gap:0}
 
 /* closing black field with sliding rows */
-.field{background:#000;color:#fff;padding:60px var(--pad) 0;position:relative;z-index:2}
+.field{background:#000;color:#fff;padding:60px calc(var(--pad) + var(--inset)) 0;position:relative;z-index:2;overflow-x:clip}
 .field .label{padding:0 0 60px}
-.row{display:block;border-top:1px solid #fff;height:262px;overflow:hidden;position:relative}
+.row{display:block;border-top:1px solid #fff;height:262px;overflow:visible;position:relative}
 .row:last-of-type{border-bottom:1px solid #fff}
-.row .big{position:absolute;top:50%;left:0;white-space:nowrap;text-align:left;
+.row .big{position:absolute;top:50%;left:calc(-1 * (var(--pad) + var(--inset)));white-space:nowrap;text-align:left;
   transform:translate3d(var(--x,0),-50%,0);will-change:transform}
 .row:hover .big{opacity:.55}
 .gap{height:120px}
 .ftr{display:grid;grid-template-columns:171px 174px 1fr auto;padding:80px 0 50px;align-items:start}
-.ftr .logo svg{height:24px}
+.ftr .logo svg{height:24px;width:46px}
 
 @media (max-width:760px){
   :root{--pad:20px;--inset:6px;--r:22px;--big:min(240px,19vw)}
@@ -74,24 +74,13 @@ a:hover .roll>i,a:focus-visible .roll>i{transform:translateY(-100%)}
 </head>
 <body>
 
-<!-- the mark: logo C, KBP between two flanges (design/brand/beam-c) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="kbp" viewBox="150 1160 466 241">
-    <rect x="170.5" y="1179.5" width="425.5" height="10" fill="currentColor"/>
-    <rect x="170.5" y="1370.5" width="425.5" height="10" fill="currentColor"/>
-    <rect x="170.5" y="1179.5" width="31" height="201" fill="currentColor"/>
-    <text x="167" y="1350" font-family="ArchivoKBP" font-weight="500" font-size="163" fill="currentColor">K</text>
-    <text x="297" y="1350" font-family="ArchivoKBP" font-weight="500" font-size="163" fill="#A97A45">B</text>
-    <text x="433" y="1350" font-family="ArchivoKBP" font-weight="500" font-size="163" fill="currentColor">P</text>
-  </symbol>
-</svg>
 
 <!-- 1 -->
 <section class="tile hero" id="top">
   <div class="card">
     <header class="hdr">
       <a class="logo s" href="/" aria-label="West Coast KBP, home">
-        <svg viewBox="150 1160 466 241"><use href="#kbp"/></svg>
+        <svg viewBox="150 1160 466 241" aria-hidden="true"><rect x="170.5" y="1179.5" width="425.5" height="10" fill="currentColor"/><rect x="170.5" y="1370.5" width="425.5" height="10" fill="currentColor"/><rect x="170.5" y="1179.5" width="31" height="201" fill="currentColor"/><text x="167" y="1350" font-family="ArchivoKBP, Archivo, sans-serif" font-weight="500" font-size="163" fill="currentColor">K</text><text x="297" y="1350" font-family="ArchivoKBP, Archivo, sans-serif" font-weight="500" font-size="163" fill="#A97A45">B</text><text x="433" y="1350" font-family="ArchivoKBP, Archivo, sans-serif" font-weight="500" font-size="163" fill="currentColor">P</text></svg>
         <span>West Coast<br>KBP</span>
       </a>
       <nav class="nav s">
@@ -169,7 +158,7 @@ a:hover .roll>i,a:focus-visible .roll>i{transform:translateY(-100%)}
   <a class="row" href="mailto:hello@westcoastkbp.com?subject=Photos%20of%20my%20house"><div class="big" data-dir="1">Send photos</div></a>
 
   <footer class="ftr s">
-    <a class="logo" href="/"><svg viewBox="150 1160 466 241" style="color:#fff"><use href="#kbp"/></svg><span>West Coast<br>KBP</span></a>
+    <a class="logo" href="/"><svg viewBox="150 1160 466 241" aria-hidden="true"><rect x="170.5" y="1179.5" width="425.5" height="10" fill="currentColor"/><rect x="170.5" y="1370.5" width="425.5" height="10" fill="currentColor"/><rect x="170.5" y="1179.5" width="31" height="201" fill="currentColor"/><text x="167" y="1350" font-family="ArchivoKBP, Archivo, sans-serif" font-weight="500" font-size="163" fill="currentColor">K</text><text x="297" y="1350" font-family="ArchivoKBP, Archivo, sans-serif" font-weight="500" font-size="163" fill="#A97A45">B</text><text x="433" y="1350" font-family="ArchivoKBP, Archivo, sans-serif" font-weight="500" font-size="163" fill="currentColor">P</text></svg><span>West Coast<br>KBP</span></a>
     <div class="nav">
       <a href="https://www.facebook.com/profile.php?id=61566048925795"><span class="roll"><i>Facebook</i><i>Facebook</i></span></a>
       <a href="mailto:hello@westcoastkbp.com"><span class="roll"><i>Email</i><i>Email</i></span></a>
