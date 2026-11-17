@@ -1,0 +1,9 @@
+# Lead intake: preview and integration notes
+
+Local development: `npm install && npm run dev`. Submissions are stored only in `.local-data/`, with no email. Never use real customer information for local or preview tests. Local files are not durable on Vercel; the endpoint refuses submissions there until external storage and delivery are configured. Preview is not ready to accept real leads.
+
+For external delivery, configure `LEAD_STORAGE=postgres`, `DATABASE_URL`, `BLOB_READ_WRITE_TOKEN`, `RESEND_API_KEY`, `LEAD_EMAIL_FROM`, and `LEAD_EMAIL_TO`. Create the Postgres table with `CREATE TABLE leads (id bigserial PRIMARY KEY, payload jsonb NOT NULL);`. Provision private Vercel Blob storage and verify the sending domain and destination with the email provider. No services or keys were created. Free-tier availability, costs, limits, terms, retention and recipient ownership have not been verified and require review before activation.
+
+Optional bot challenge: set `TURNSTILE_ENABLED=true`, `TURNSTILE_SECRET_KEY` and `NEXT_PUBLIC_TURNSTILE_SITE_KEY` together. Turnstile free-tier availability and terms are unverified. No keys created.
+
+The rate limit is in process memory, per instance: it is not a distributed or durable production defense. Before accepting real leads, replace it with a shared atomic limiter and trusted client IP handling. The service-area list identifies a few known local towns and ZIPs only; everything else is unknown, not rejected. It is not a radius calculation. Photo upload is bounded to 3 images, 3.5 MB each and 4 MB total request. Vercel's own request limit also applies. Blob, database and email operations are not atomic: a failed notification after a saved lead can result in duplicates on retry, and failed writes can leave orphaned photos. Add a durable outbox, idempotency and cleanup before activation. No automated retention/deletion policy is implemented. Source fields are visitor-supplied and untrusted.
