@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Home(){return <main><h1>West Coast KBP — technical preparation</h1><p>Internal foundation; design and content are pending approval.</p><nav aria-label="Services"><ul><li><Link href="/services/siding">Siding</Link></li><li><Link href="/services/windows">Windows</Link></li><li><Link href="/services/remodeling">Remodeling</Link></li><li><Link href="/services/adu">ADU</Link></li></ul></nav><Link href="/inquiry">Inquiry prototype</Link></main>}
