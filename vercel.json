@@ -30,6 +30,10 @@
       "dest": "/privacy.html"
     },
     {
+      "src": "/(siding|windows|roseville)/?",
+      "dest": "/$1.html"
+    },
+    {
       "handle": "filesystem"
     }
   ]
